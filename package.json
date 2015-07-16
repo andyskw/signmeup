@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "index.js",
-    "test": "mocha specs/*"
+    "test": "./node_modules/.bin/mocha"
   },
   "repository": {
     "type": "git",
@@ -34,6 +34,7 @@
     "chai": "~3.0.0",
     "sinon": "~1.15.4",
     "mocha": "~2.2.5",
-    "istanbul": "~0.3.17"
+    "istanbul": "~0.3.17",
+    "proxyquire": "~1.6.0"
   }
 }

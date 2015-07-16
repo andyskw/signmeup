@@ -4,6 +4,13 @@ var express = require('express');
 
 
 exports.startApplication = function(config, log) {
+  if (config == null ) {
+    throw new Error("Missing configuration, application cannot be started without config!");
+  }
+  if (log == null) {
+    throw new Error("Missing logger; application cannot be started without a proper logger.");
+  }
+
   var app = express();
   var router = require("express").Router();
   initApplication(config, app, router);
@@ -11,7 +18,7 @@ exports.startApplication = function(config, log) {
   http.createServer(app).listen(app.get('port'), function() {
        log.info("SignMeUP API test started on port " + app.get('port'));
   }).on('error', function(err) {
-    log.error("Error while starting Express. Shutting down the application.", err);
+      throw new Error("Error while starting Express. Shutting down the application.", err);
   });
 
 };
