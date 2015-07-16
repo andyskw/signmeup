@@ -1,6 +1,7 @@
 "use strict"
 var http = require("http");
 var express = require('express');
+var signup = require('./routes/signup.js');
 var bodyparser = require("body-parser")
 
 
@@ -14,7 +15,10 @@ exports.startApplication = function(config, log) {
 
   var app = express();
   var router = require("express").Router();
+  router.post('/signup', signup.initRoute(config, log));
+
   initApplication(config, app, router);
+
 
   http.createServer(app).listen(app.get('port'), function() {
        log.info("SignMeUP API test started on port " + app.get('port'));
