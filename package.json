@@ -20,5 +20,17 @@
   "bugs": {
     "url": "https://github.com/andyskw/signmeup/issues"
   },
-  "homepage": "https://github.com/andyskw/signmeup"
+  "homepage": "https://github.com/andyskw/signmeup",
+  "dependencies": {
+    "lodash": "~3.10.0",
+    "body-parser": "~1.13.2",
+    "express": "~4.13.1"
+  },
+  "devDependencies": {
+    "sinon-chai": "~2.8.0",
+    "chai": "~3.0.0",
+    "sinon": "~1.15.4",
+    "mocha": "~2.2.5",
+    "istanbul": "~0.3.17"
+  }
 }
