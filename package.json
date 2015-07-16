@@ -1,0 +1,24 @@
+{
+  "name": "signmeup",
+  "version": "0.0.0",
+  "description": "SignMeUp test app",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha specs/*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:andyskw/signmeup.git"
+  },
+  "keywords": [
+    "angular",
+    "node",
+    "express"
+  ],
+  "author": "Andras Ivanyi <andras.ivanyi@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/andyskw/signmeup/issues"
+  },
+  "homepage": "https://github.com/andyskw/signmeup"
+}
