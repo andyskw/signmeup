@@ -4,6 +4,7 @@
   "description": "SignMeUp test app",
   "main": "index.js",
   "scripts": {
+    "start": "index.js",
     "test": "mocha specs/*"
   },
   "repository": {
@@ -24,7 +25,9 @@
   "dependencies": {
     "lodash": "~3.10.0",
     "body-parser": "~1.13.2",
-    "express": "~4.13.1"
+    "express": "~4.13.1",
+    "config": "~1.14.0",
+    "log4js": "~0.6.26"
   },
   "devDependencies": {
     "sinon-chai": "~2.8.0",

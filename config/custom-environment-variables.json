@@ -1,0 +1,12 @@
+{
+  "express": {
+    "port": "PORT"
+  },
+  "log4js" : {
+    "appenders" : {
+      "__name": "LOG_APPENDERS",
+        "__format": "json"
+    },
+    "default_logger" : "DEFAULT_LOGGER"
+  }
+}
