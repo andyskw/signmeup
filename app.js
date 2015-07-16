@@ -1,6 +1,7 @@
 "use strict"
 var http = require("http");
 var express = require('express');
+var bodyparser = require("body-parser")
 
 
 exports.startApplication = function(config, log) {
@@ -25,6 +26,11 @@ exports.startApplication = function(config, log) {
 
 function initApplication(config, app, router) {
   app.set('port', config.express.port);
+  app.use(bodyparser.json());
   app.use(express.static('public'));
+  app.options("*", router);
+  app.get("*", router);
+  app.put("*", router);
+  app.post("*", router);
 
 };
