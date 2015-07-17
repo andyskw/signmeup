@@ -28,9 +28,6 @@ function validateRequest(data) {
   if (!data.email) {
     issues.push(new RequestIssue("email", CONST_ISSUE_TYPES.MISSING));
   }
-  if (!data.birthdate) {
-    issues.push(new RequestIssue("birthdate", CONST_ISSUE_TYPES.MISSING));
-  }
 
   //validate e-mail address:
   if (data.email && !validator.isEmail(data.email)) {
