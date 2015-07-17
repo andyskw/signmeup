@@ -2,7 +2,9 @@
 var http = require("http");
 var express = require('express');
 var signup = require('./routes/signup.js');
-var bodyparser = require("body-parser")
+var bodyparser = require("body-parser");
+var index = require("./routes/index.js");
+var handlebars = require("express-handlebars");
 
 
 exports.startApplication = function(config, log) {
@@ -16,6 +18,7 @@ exports.startApplication = function(config, log) {
   var app = express();
   var router = require("express").Router();
   router.post('/signup', signup.initRoute(config, log));
+  router.get('/', index.initRoute(config,log));
 
   initApplication(config, app, router);
 
@@ -29,9 +32,16 @@ exports.startApplication = function(config, log) {
 };
 
 function initApplication(config, app, router) {
+  app.engine('handlebars', handlebars({
+    defaultLayout: 'default',
+    partialsDir: ['./views/partials/']
+  }));
+
+  app.set('views', './views');
+  app.set('view engine', 'handlebars');
   app.set('port', config.express.port);
   app.use(bodyparser.json());
-  app.use(express.static('public'));
+  app.use(express.static('./public'));
   app.options("*", router);
   app.get("*", router);
   app.put("*", router);

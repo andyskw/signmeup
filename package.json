@@ -29,7 +29,8 @@
     "config": "~1.14.0",
     "log4js": "~0.6.26",
     "validator": "~3.41.2",
-    "moment": "~2.10.3"
+    "moment": "~2.10.3",
+    "express-handlebars": "~2.0.1"
   },
   "devDependencies": {
     "sinon-chai": "~2.8.0",
