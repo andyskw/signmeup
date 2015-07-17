@@ -13,7 +13,7 @@ exports.initRoute = function(conf, l) {
 
 function processPost(req,res) {
   log.trace("POST /signup Received request body:", req.body);
-  var validateResult = requestValidator.validateRequest(req.body);
+  var validateResult = new requestValidator().validateRequest(req.body);
   var response = new ResponseBuilder();
   if (validateResult.isValid) {
     response.setStatus(200);
