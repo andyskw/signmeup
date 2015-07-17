@@ -1,18 +1,4 @@
-#occupation {
-  padding: 0;
-}
-
-#occupation .autocomplete {
-  padding: 0;
-  border: 0;
-  border-radius: 4px;
-  line-height: 1.42857143;
-}
-
 #occupation .autocomplete input {
-  border: 1px;
-  border-radius: 5px;
-      border: 1px solid rgba(0, 0, 0, 0.2);
   font-size: 1em;
   padding: 6px 12px;
 }
