@@ -1,20 +1,20 @@
-<form class="form-horizontal">
+<form class="form-horizontal" name="signupForm" ng-submit="signupForm.$valid && formCtrl.submit(formCtrl.userData)" novalidate>
     <div class="form-group">
         <label for="inputName" class="control-label col-xs-2" >Name</label>
         <div class="col-xs-10">
-            <input type="text" class="form-control" id="name" placeholder="Name" ng-model="formCtrl.userData.name">
+            <input type="text" class="form-control" id="name" placeholder="Name" ng-model="formCtrl.userData.name" required autofocus>
         </div>
     </div>
     <div class="form-group">
         <label for="inputEmail" class="control-label col-xs-2">E-mail</label>
         <div class="col-xs-10">
-            <input type="email" class="form-control" id="email" placeholder="E-mail" ng-model="formCtrl.userData.email" novalidate>
+            <input type="email" class="form-control" id="email" placeholder="E-mail" ng-model="formCtrl.userData.email" required>
         </div>
     </div>
     <div class="form-group">
         <label for="inputOccupation" class="control-label col-xs-2">Occupation</label>
         <div class="col-xs-10">
-            <autocomplete id="occupation" attr-input-class="form-control" attr-placeholder="Occupation (3 characters min)" ng-model="formCtrl.userData.occupation" data="formCtrl.occupations" on-type="formCtrl.onType">
+            <autocomplete id="occupation" attr-input-class="form-control" attr-placeholder="Occupation (3 characters min)" ng-model="formCtrl.userData.occupation" data="formCtrl.occupations" on-type="formCtrl.onType" novalidate>
         </div>
     </div>
     <div class="form-group">
@@ -26,7 +26,7 @@
 
     <div class="form-group">
         <div class="col-xs-offset-2 col-xs-10">
-            <button type="submit" class="btn btn-primary">Login</button>
+            <button type="submit" class="btn btn-primary" ng-disabled="!signupForm.$valid">Login</button>
         </div>
     </div>
 </form>

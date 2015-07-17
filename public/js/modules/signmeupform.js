@@ -35,4 +35,9 @@ app.controller("SignMeUpFormController", ["$http", function($http) {
   }
   this.onType = onType;
 
+  var submit = function(data) {
+    console.log(data);
+  }
+  this.submit = submit;
+
 }]);
