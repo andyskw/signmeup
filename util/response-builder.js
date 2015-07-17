@@ -1,4 +1,4 @@
-function SignupResponse() {
+function ResponseBuilder() {
   var status,
       error,
       data;
@@ -50,4 +50,4 @@ function SignupResponse() {
 
 }
 
-module.exports = SignupResponse;
+module.exports = ResponseBuilder;
