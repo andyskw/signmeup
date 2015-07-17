@@ -5,6 +5,7 @@ var signup = require('./routes/signup.js');
 var bodyparser = require("body-parser");
 var index = require("./routes/index.js");
 var handlebars = require("express-handlebars");
+var occupations = require("./routes/occupations");
 
 
 exports.startApplication = function(config, log) {
@@ -19,6 +20,7 @@ exports.startApplication = function(config, log) {
   var router = require("express").Router();
   router.post('/signup', signup.initRoute(config, log));
   router.get('/', index.initRoute(config,log));
+  router.get('/occupations', occupations.initRoute(config,log));
 
   initApplication(config, app, router);
 
