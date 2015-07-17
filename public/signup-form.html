@@ -1,30 +1,36 @@
 <form class="form-horizontal" name="signupForm" ng-submit="!(signupForm.$invalid && (signupForm.$error.required || signupForm.$error.max || signupForm.$error.email)) && formCtrl.submit(formCtrl.userData)" novalidate>
-    <div class="form-group">
+    <div class="form-group row">
         <label for="inputName" class="control-label col-xs-2" >Name</label>
         <div class="col-xs-10">
-            <input type="text" class="form-control" id="name" placeholder="Name" ng-model="formCtrl.userData.name" required autofocus>
+            <input type="text" class="form-control" id="name" name="name" placeholder="Name" ng-model="formCtrl.userData.name" required autofocus>
+            <span ng-class="{'help-block': true, 'warn': signupForm.name.$error.required && signupForm.name.$touched}">Please enter your name. This field is required.</span>
         </div>
     </div>
-    <div class="form-group">
+    <div class="form-group row">
         <label for="inputEmail" class="control-label col-xs-2">E-mail</label>
         <div class="col-xs-10">
-            <input type="email" class="form-control" id="email" placeholder="E-mail" ng-model="formCtrl.userData.email" required>
+            <input type="email" class="form-control" id="email" name="email" placeholder="E-mail" ng-model="formCtrl.userData.email" required>
+            <span ng-class="{'help-block': true, 'warn': signupForm.email.$error.required && signupForm.email.$touched}">Please enter your valid e-mail address. This field is required.</span>
         </div>
+
     </div>
-    <div class="form-group">
+    <div class="form-group row">
         <label for="inputOccupation" class="control-label col-xs-2">Occupation</label>
         <div class="col-xs-10">
-            <autocomplete id="occupation" attr-input-class="form-control" attr-placeholder="Occupation (3 characters min)" ng-model="formCtrl.userData.occupation" data="formCtrl.occupations" on-type="formCtrl.onType" novalidate>
+            <autocomplete attr-id="occupation" name="occupation"  attr-input-class="form-control"  attr-placeholder="Occupation (3 characters min)" ng-model="formCtrl.userData.occupation" data="formCtrl.occupations" on-type="formCtrl.onType" novalidate></autocomplete>
+
+            <span class="help-block">Please enter your occupation. Once you typed in 3 characters, a list will help your way. This field is not required.</span>
         </div>
     </div>
-    <div class="form-group">
+    <div class="form-group row">
         <label for="inputBirthdate" class="control-label col-xs-2">Birth date</label>
         <div class="col-xs-10">
-            <input type="date" class="form-control" id="birthdate" max="{{formCtrl.minAge}}" placeholder="Birth date" ng-model="formCtrl.userData.birthdate" novalidate>
+            <input type="date" class="form-control" id="birthdate" name="birthdate" max="{{formCtrl.minAge}}" placeholder="Birth date" ng-model="formCtrl.userData.birthdate" novalidate>
+            <span ng-class="{'help-block': true, 'warn': signupForm.birthdate.$error.max && signupForm.birthdate.$touched}">Please enter your birth date. Please note, that we can accept only submissions from people older than 18 years old. The field is not mandatory however. :)</span>
         </div>
     </div>
 
-    <div class="form-group">
+    <div class="form-group row">
         <div class="col-xs-offset-2 col-xs-10">
             <button type="submit" class="btn btn-primary" ng-disabled="signupForm.$invalid && (signupForm.$error.required || signupForm.$error.max || signupForm.$error.email)">Login</button>
         </div>

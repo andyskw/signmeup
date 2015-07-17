@@ -2,3 +2,26 @@
   font-size: 1em;
   padding: 6px 12px;
 }
+
+.ng-invalid.ng-dirty {
+  border-color: #FA787E;
+}
+
+.ng-valid.ng-dirty {
+  border-color: #78FA89;
+}
+
+.help-block {
+  border-radius: 5px;
+  padding-top: 8px;
+  padding-bottom: 7px;
+  padding-left: 7px;
+
+  position: relative;
+}
+
+
+.warn {
+  background: rgba(100, 0, 0, 0.1);
+  color: #FA787E;
+}
