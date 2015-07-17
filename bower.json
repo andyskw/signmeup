@@ -1,0 +1,14 @@
+{
+  "name": "signmeup",
+  "version": "0.0.0",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "components"
+  ],
+  "dependencies": {
+    "angular": "~1.4.3",
+    "angular-route": "~1.4.3",
+    "bootstrap": "~3.3.5"
+  }
+}
