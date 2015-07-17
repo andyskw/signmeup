@@ -1,5 +1,10 @@
 # signmeup
 
+
+## Design decisions
+
+ * birthdate is not mandatory
+
 ## Testing
 
 ### Backend test cases
