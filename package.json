@@ -38,6 +38,12 @@
     "sinon": "~1.15.4",
     "mocha": "~2.2.5",
     "istanbul": "~0.3.17",
-    "proxyquire": "~1.6.0"
+    "proxyquire": "~1.6.0",
+    "karma-cli": "~0.1.0",
+    "karma-chai": "~0.1.0",
+    "karma-mocha": "~0.2.0",
+    "phantomjs": "~1.9.17",
+    "karma": "~0.13.1",
+    "karma-chrome-launcher": "~0.2.0"
   }
 }
