@@ -14,7 +14,7 @@
     <div class="form-group">
         <label for="inputOccupation" class="control-label col-xs-2">Occupation</label>
         <div class="col-xs-10">
-            <input type="occupation" class="form-control" id="occupation" placeholder="Occupation..." ng-model="formCtrl.userData.occupation">
+            <autocomplete id="occupation" placeholder="Occupation..." ng-model="formCtrl.userData.occupation" data="formCtrl.occupations" >
         </div>
     </div>
     <div class="form-group">

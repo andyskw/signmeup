@@ -1,6 +1,6 @@
 "use strict"
 
-var app = angular.module('signmeupform', []);
+var app = angular.module('signmeupform', ['autocomplete']);
 
 app.directive('signmeupForm', function() {
   return {
@@ -15,5 +15,6 @@ app.controller("SignMeUpFormController", function() {
     email: null,
     occupation: null,
     birthdate: null
-  }
+  };
+  this.occupations = ["almafa", "kortefa", "barackfa"];
 });
