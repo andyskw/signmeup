@@ -1,0 +1,32 @@
+<form class="form-horizontal">
+    <div class="form-group">
+        <label for="inputName" class="control-label col-xs-2" >Name</label>
+        <div class="col-xs-10">
+            <input type="text" class="form-control" id="name" placeholder="Name" ng-model="formCtrl.userData.name">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="inputEmail" class="control-label col-xs-2">E-mail</label>
+        <div class="col-xs-10">
+            <input type="email" class="form-control" id="email" placeholder="E-mail" ng-model="formCtrl.userData.email" novalidate>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="inputOccupation" class="control-label col-xs-2">Occupation</label>
+        <div class="col-xs-10">
+            <input type="occupation" class="form-control" id="occupation" placeholder="Occupation..." ng-model="formCtrl.userData.occupation">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="inputBirthdate" class="control-label col-xs-2">Birth date</label>
+        <div class="col-xs-10">
+            <input type="date" class="form-control" id="birthdate" placeholder="Birth date" ng-model="formCtrl.userData.birthdate">
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-xs-offset-2 col-xs-10">
+            <button type="submit" class="btn btn-primary">Login</button>
+        </div>
+    </div>
+</form>
