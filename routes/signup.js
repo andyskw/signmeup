@@ -1,7 +1,7 @@
 "use strict"
 
 var requestValidator = require("../util/signup-request-validator");
-var SignupResponse = require("../util/signup-response");
+var ResponseBuilder = require("../util/response-builder");
 
 var config = null;
 var log = null;
@@ -14,7 +14,7 @@ exports.initRoute = function(conf, l) {
 function processPost(req,res) {
   log.trace("POST /signup Received request body:", req.body);
   var validateResult = requestValidator.validateRequest(req.body);
-  var response = new SignupResponse();
+  var response = new ResponseBuilder();
   if (validateResult.isValid) {
     response.setStatus(200);
   } else {

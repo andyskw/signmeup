@@ -2,16 +2,16 @@ var chai = require("chai");
 var expect = chai.expect;
 var sinon = require("sinon");
 var sinonChai = require("sinon-chai");
-var SignupResponse = require("../util/signup-response");
+var ResponseBuilder = require("../util/response-builder");
 chai.use(sinonChai);
 
 
 
-describe("signup-response", function () {
+describe("response-builder", function () {
 
 
   it("should generate a response if no setup is provided", function() {
-      var response = new SignupResponse();
+      var response = new ResponseBuilder();
 
       var resp = response.build();
 
@@ -19,7 +19,7 @@ describe("signup-response", function () {
   });
 
   it("should generate a response with data if data is provided", function() {
-      var response = new SignupResponse();
+      var response = new ResponseBuilder();
 
       var resp = response.setData("hello").build();
 
@@ -28,7 +28,7 @@ describe("signup-response", function () {
   });
 
   it("should generate a response with error if error is provided", function() {
-      var response = new SignupResponse();
+      var response = new ResponseBuilder();
 
       var resp = response.setError("hello").build();
 
@@ -38,7 +38,7 @@ describe("signup-response", function () {
   });
 
   it("should generate a response with error if error AND data is provided", function() {
-      var response = new SignupResponse();
+      var response = new ResponseBuilder();
 
       var resp = response.setError("hello").setData("whatsup").build();
 
@@ -49,7 +49,7 @@ describe("signup-response", function () {
   });
 
   it("should generate a response with the given status code if it is provided", function() {
-      var response = new SignupResponse();
+      var response = new ResponseBuilder();
 
       var resp = response.setStatus(2).build();
 
