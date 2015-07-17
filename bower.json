@@ -10,6 +10,7 @@
     "angular": "~1.4.3",
     "angular-route": "~1.4.3",
     "bootstrap": "~3.3.5",
-    "allmighty-autocomplete" : "master"
+    "allmighty-autocomplete": "master",
+    "angular-momentjs": "~0.2.2"
   }
 }

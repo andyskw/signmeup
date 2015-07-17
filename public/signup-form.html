@@ -1,4 +1,4 @@
-<form class="form-horizontal" name="signupForm" ng-submit="signupForm.$valid && formCtrl.submit(formCtrl.userData)" novalidate>
+<form class="form-horizontal" name="signupForm" ng-submit="(signupForm.$invalid && (signupForm.$error.required || signupForm.$error.max || signupForm.$error.email)) && formCtrl.submit(formCtrl.userData)" novalidate>
     <div class="form-group">
         <label for="inputName" class="control-label col-xs-2" >Name</label>
         <div class="col-xs-10">
@@ -20,13 +20,13 @@
     <div class="form-group">
         <label for="inputBirthdate" class="control-label col-xs-2">Birth date</label>
         <div class="col-xs-10">
-            <input type="date" class="form-control" id="birthdate" placeholder="Birth date" ng-model="formCtrl.userData.birthdate">
+            <input type="date" class="form-control" id="birthdate" max="{{formCtrl.minAge}}" placeholder="Birth date" ng-model="formCtrl.userData.birthdate" novalidate>
         </div>
     </div>
 
     <div class="form-group">
         <div class="col-xs-offset-2 col-xs-10">
-            <button type="submit" class="btn btn-primary" ng-disabled="!signupForm.$valid">Login</button>
+            <button type="submit" class="btn btn-primary" ng-disabled="signupForm.$invalid && (signupForm.$error.required || signupForm.$error.max || signupForm.$error.email)">Login</button>
         </div>
     </div>
 </form>

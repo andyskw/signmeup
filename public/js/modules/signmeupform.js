@@ -1,6 +1,6 @@
 "use strict"
 
-var app = angular.module('signmeupform', ['autocomplete']);
+var app = angular.module('signmeupform', ['autocomplete', 'angular-momentjs']);
 
 app.directive('signmeupForm', function() {
   return {
@@ -9,13 +9,16 @@ app.directive('signmeupForm', function() {
   }
 });
 
-app.controller("SignMeUpFormController", ["$http", function($http) {
+
+app.controller("SignMeUpFormController", ["$http", "$moment", function($http, $moment) {
   this.userData = {
     name: null,
     email: null,
     occupation: null,
     birthdate: null
   };
+  this.minAge = $moment().subtract(18, 'years').format('YYYY-MM-DD');
+
   var _self = this;
   this.occupations = [];
   this.occupationData = [];
@@ -39,5 +42,10 @@ app.controller("SignMeUpFormController", ["$http", function($http) {
     console.log(data);
   }
   this.submit = submit;
+
+  function canSubmitted(signupForm) {
+    return signupForm.$valid;
+  }
+  this.canSubmitted = canSubmitted;
 
 }]);
