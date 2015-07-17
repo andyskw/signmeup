@@ -10,7 +10,7 @@ app.directive('signmeupForm', function() {
 });
 
 
-app.controller("SignMeUpFormController", ["$http", "$moment", function($http, $moment) {
+app.controller("SignMeUpFormController", ["$http", "$moment", "$location", function($http, $moment, $location) {
   this.userData = {
     name: null,
     email: null,
@@ -40,6 +40,13 @@ app.controller("SignMeUpFormController", ["$http", "$moment", function($http, $m
 
   var submit = function(data) {
     console.log(data);
+    $http.post('/signup', data).success(function (data, status) {
+      if (status === 200) {
+        $location.path('/submitted');
+      }
+    }).error(function(data, status) {
+
+    });
   }
   this.submit = submit;
 

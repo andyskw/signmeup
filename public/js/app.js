@@ -10,7 +10,11 @@ app.config(['$routeProvider',
         templateUrl: '/signup-form.html',
         controller: 'SignMeUpFormController',
         controllerAs: 'formCtrl'
-      }).otherwise({
+      })
+      .when('/submitted', {
+        templateUrl: '/submitted.html'
+      })
+      .otherwise({
         redirectTo: '/'
       });
   }]);
