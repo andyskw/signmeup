@@ -19,7 +19,7 @@ the following command:
 To generate a coverage report of the test cases, you can run istanbul with the following
 command:
 
-     ./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha
+     ./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha -- --recursive ./test/backend
 
 Then you can open the coverage report:
 

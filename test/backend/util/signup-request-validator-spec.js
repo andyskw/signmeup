@@ -2,7 +2,7 @@ var chai = require("chai");
 var expect = chai.expect;
 var sinon = require("sinon");
 var sinonChai = require("sinon-chai");
-var SignupRequestValidator = require("../util/signup-request-validator");
+var SignupRequestValidator = require("../../../util/signup-request-validator");
 chai.use(sinonChai);
 
 

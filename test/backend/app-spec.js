@@ -11,7 +11,7 @@ var EventEmitter = require("events").EventEmitter;
 describe("App starter", function () {
   it("#startApplication should throw an exception config object is missing", function() {
     var http = {createServer : sinon.stub()};
-    var app = proxyquire("../app", {'http': http});
+    var app = proxyquire("../../app", {'http': http});
     var threw = false;
 
     try {
@@ -25,7 +25,7 @@ describe("App starter", function () {
 
   it("#startApplication should throw an exception logger object is missing", function() {
     var http = {createServer : sinon.stub()};
-    var app = proxyquire("../app", {'http': http});
+    var app = proxyquire("../../app", {'http': http});
     var threw = false;
 
     try {
@@ -50,7 +50,7 @@ describe("App starter", function () {
         };
       }
     };
-    var app = proxyquire("../app", {'http': http});
+    var app = proxyquire("../../app", {'http': http});
     var threw = false;
 
     var config = {
@@ -73,7 +73,7 @@ describe("App starter", function () {
         };
       }
     };
-    var app = proxyquire("../app", {'http': http});
+    var app = proxyquire("../../app", {'http': http});
     var threw = false;
 
     var config = {
@@ -103,7 +103,7 @@ describe("App starter", function () {
         };
       }
     };
-    var app = proxyquire("../app", {'http': http});
+    var app = proxyquire("../../app", {'http': http});
     var threw = false;
 
     var config = {

@@ -2,7 +2,7 @@ var chai = require("chai");
 var expect = chai.expect;
 var sinon = require("sinon");
 var sinonChai = require("sinon-chai");
-var ResponseBuilder = require("../util/response-builder");
+var ResponseBuilder = require("../../../util/response-builder");
 chai.use(sinonChai);
 
 
