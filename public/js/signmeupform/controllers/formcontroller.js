@@ -1,4 +1,7 @@
-app.controller("SignMeUpFormController", ["$http", "$moment", "$location", function($http, $moment, $location) {
+var module = angular.module('signmeupform', ['autocomplete', 'angular-momentjs', 'signmeup.services.backend']);
+
+module.controller("SignMeUpFormController", ["$http", "$moment", "$location", "BackendService", function($http, $moment, $location, BackendService) {
+  var _that = this;
   this.userData = {
     name: null,
     email: null,
@@ -10,8 +13,9 @@ app.controller("SignMeUpFormController", ["$http", "$moment", "$location", funct
   var _self = this;
   this.occupations = [];
   this.occupationData = [];
-  $http.get('/occupations').then(function (resp) {
-    if (resp.status = 200) {
+
+  BackendService.getOccupationList().then(function (resp, status) {
+    if (status = 200) {
       var data = resp.data;
       _self.occupationData = data.data;
     }
@@ -27,20 +31,13 @@ app.controller("SignMeUpFormController", ["$http", "$moment", "$location", funct
   this.onType = onType;
 
   var submit = function(data) {
-    console.log(data);
-    $http.post('/signup', data).success(function (data, status) {
-      if (status === 200) {
-        $location.path('/submitted');
-      }
-    }).error(function(data, status) {
-
-    });
+      var a = BackendService.sendSignupForm(_that.userData);
+      console.log(a);
+      a.then(function (data) {
+        $location.path("/submitted");
+      }, function (data) {
+      });
   }
   this.submit = submit;
-
-  function canSubmitted(signupForm) {
-    return signupForm.$valid;
-  }
-  this.canSubmitted = canSubmitted;
 
 }]);
