@@ -8,7 +8,7 @@ mod.controller("SignMeUpFormController", ["$http", "$moment", "$location", "Back
     occupation: null,
     birthdate: null
   };
-  this.minAge = $moment().subtract(18, 'years').format('YYYY-MM-DD');
+  this.maxBirthDate = $moment().subtract(18, 'years').format('YYYY-MM-DD');
 
   var _self = this;
   this.occupations = [];

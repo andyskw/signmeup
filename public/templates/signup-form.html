@@ -25,7 +25,7 @@
     <div class="form-group row">
         <label for="inputBirthdate" class="control-label col-xs-2">Birth date</label>
         <div class="col-xs-10">
-            <input type="date" class="form-control" id="birthdate" name="birthdate" max="{{formCtrl.minAge}}" placeholder="Birth date" ng-model="formCtrl.userData.birthdate" novalidate>
+            <input type="date" class="form-control" id="birthdate" name="birthdate" max="{{formCtrl.maxBirthDate}}" placeholder="Birth date" ng-model="formCtrl.userData.birthdate" novalidate>
             <span ng-class="{'help-block': true, 'warn': signupForm.birthdate.$error.max && signupForm.birthdate.$touched}">Please enter your birth date. Please note, that we can accept only submissions from people older than 18 years old. The field is not mandatory however. :)</span>
         </div>
     </div>
