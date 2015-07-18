@@ -1,3 +1,5 @@
+"use strict"
+
 angular.module('signmeup.services.backend', [])
   .factory('BackendService', ['$http', '$q', function($http, $q) {
 
@@ -5,7 +7,7 @@ angular.module('signmeup.services.backend', [])
       var deferred = $q.defer();
 
 
-      $http.get('/occupations').success(function(data,status) {
+      $http({method: 'GET', url: '/occupations', timeout: 1000}).success(function(data,status) {
         if (status === 200) {
           deferred.resolve(data.data);
         }
@@ -17,7 +19,7 @@ angular.module('signmeup.services.backend', [])
 
     function sendSignupForm(data) {
       var deferred = $q.defer();
-      $http.post('/signup', data).success(function (data, status) {
+      $http({method: 'POST', url: '/signup', data: data, timeout: 1000}).success(function (data, status) {
         if (status === 200) {
           deferred.resolve(data.data);
         }
