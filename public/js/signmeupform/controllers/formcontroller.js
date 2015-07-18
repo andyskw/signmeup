@@ -1,6 +1,6 @@
-var module = angular.module('signmeupform', ['autocomplete', 'angular-momentjs', 'signmeup.services.backend']);
+var mod = angular.module('signmeupform', ['autocomplete', 'angular-momentjs', 'signmeup.services.backend']);
 
-module.controller("SignMeUpFormController", ["$http", "$moment", "$location", "BackendService", function($http, $moment, $location, BackendService) {
+mod.controller("SignMeUpFormController", ["$http", "$moment", "$location", "BackendService", function($http, $moment, $location, BackendService) {
   var _that = this;
   this.userData = {
     name: null,
