@@ -32,7 +32,7 @@ describe("BackendService", function() {
   });
 
 
-  it('#getOccupationList should return with the occupation list array', function (done) {
+  it('#getOccupationList should pass the error forward if error happens in /occupations ', function (done) {
     $httpBackend.expectGET('/occupations').respond(500, 'Raptors everywhere!');
     bs.getOccupationList().then(function() {
       expect(false).to.be.true;
