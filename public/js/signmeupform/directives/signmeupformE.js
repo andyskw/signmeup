@@ -1,3 +1,5 @@
+"use strict"
+
 var mod = angular.module('signmeupform');
 mod.directive('signmeupForm', function() {
   return {

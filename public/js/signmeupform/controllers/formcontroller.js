@@ -1,3 +1,5 @@
+"use strict"
+
 var mod = angular.module('signmeupform', ['autocomplete', 'angular-momentjs', 'signmeup.services.backend']);
 
 mod.controller("SignMeUpFormController", ["$http", "$moment", "$location", "BackendService", function($http, $moment, $location, BackendService) {
