@@ -5,7 +5,7 @@ module.exports = function(config) {
   config.set({
 
     // base path that will be used to resolve all patterns (eg. files, exclude)
-    basePath: '',
+    basePath: '.',
 
 
     // frameworks to use
@@ -15,13 +15,15 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-      'public/vendor/angular/angular.min.js',
-      'public/vendor/allmighty-autocomplete/autocomplete.js',
-      'public/vendor/angular-route/angular-route.min.js',
-      'public/vendor/moment/min/moment.min.js',
-      'public/vendor/angular-momentjs/angular-momentjs.min.js',
-      'public/js/*.js',
-      'public/js/**/*.js',
+
+      './public/vendor/angular/angular.min.js',
+      './public/vendor/angular-mocks/angular-mocks.js',
+      './public/vendor/angular-route/angular-route.min.js',
+      './public/vendor/allmighty-autocomplete/script/autocomplete.js',
+      './public/vendor/moment/min/moment.min.js',
+      './public/vendor/angular-momentjs/angular-momentjs.min.js',
+      './public/js/*.js',
+      './public/js/**/*.js',
       'test/karma/*.js'
     ],
 
