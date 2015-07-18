@@ -2,7 +2,17 @@ angular.module('signmeup.services.backend', [])
   .factory('BackendService', ['$http', '$q', function($http, $q) {
 
     function getOccupationList() {
-      return $http.get('/occupations');
+      var deferred = $q.defer();
+
+
+      return $http.get('/occupations').then(function(data,status) {
+        if (status === 200) {
+          deferred.resolve(data.data);
+        }
+      }, function(err,status) {
+        deferred.reject(err);
+      });
+      return deferred.promise;
     }
 
     function sendSignupForm(data) {

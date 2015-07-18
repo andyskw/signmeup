@@ -14,11 +14,8 @@ mod.controller("SignMeUpFormController", ["$http", "$moment", "$location", "Back
   this.occupations = [];
   this.occupationData = [];
 
-  BackendService.getOccupationList().then(function (resp, status) {
-    if (status = 200) {
-      var data = resp.data;
-      _self.occupationData = data.data;
-    }
+  BackendService.getOccupationList().then(function (occupations) {
+      _self.occupationData = occupations;
   });
 
   function onType(current) {
