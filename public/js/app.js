@@ -7,12 +7,12 @@ app.config(['$routeProvider',
   function ($routeProvider) {
     $routeProvider.
       when('/', {
-        templateUrl: '/signup-form.html',
+        templateUrl: '/templates/signup-form.html',
         controller: 'SignMeUpFormController',
         controllerAs: 'formCtrl'
       })
       .when('/submitted', {
-        templateUrl: '/submitted.html'
+        templateUrl: '/templates/submitted.html'
       })
       .otherwise({
         redirectTo: '/'
