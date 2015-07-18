@@ -46,6 +46,7 @@
     "karma": "~0.13.2",
     "karma-chrome-launcher": "~0.2.0",
     "karma-spec-reporter": "0.0.20",
-    "karma-coverage": "~0.4.2"
+    "karma-coverage": "~0.4.2",
+    "karma-sinon-chai": "~1.0.0"
   }
 }
