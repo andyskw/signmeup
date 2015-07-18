@@ -94,6 +94,14 @@ describe("SignMeUpFormController", function() {
     expect($location.path()).to.be.equal("/submitted");
   });
 
+  it('#submit should display the error message, when something went terribly wrong with the submission of the form.', function () {
+    controller.submit();
+    expect(controller.showAlert).to.be.false;
+    serviceDeferred.reject("ouch");
+    $rootScope.$apply();
+    expect(controller.showAlert).to.be.true;
+  });
+
 
 
 });

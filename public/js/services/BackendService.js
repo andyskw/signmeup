@@ -5,11 +5,11 @@ angular.module('signmeup.services.backend', [])
       var deferred = $q.defer();
 
 
-      return $http.get('/occupations').then(function(data,status) {
+      $http.get('/occupations').success(function(data,status) {
         if (status === 200) {
           deferred.resolve(data.data);
         }
-      }, function(err,status) {
+      }).error(function(err,status) {
         deferred.reject(err);
       });
       return deferred.promise;

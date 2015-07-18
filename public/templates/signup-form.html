@@ -1,4 +1,7 @@
 <form class="form-horizontal" name="signupForm" ng-submit="!(signupForm.$invalid && (signupForm.$error.required || signupForm.$error.max || signupForm.$error.email)) && formCtrl.submit(formCtrl.userData)" novalidate>
+  <div class="alert alert-danger" role="alert" ng-show="formCtrl.showAlert">
+      <strong>Error!</strong> {{formCtrl.warnMessage}}
+    </div>
     <div class="form-group row">
         <label for="inputName" class="control-label col-xs-2" >Name</label>
         <div class="col-xs-10">

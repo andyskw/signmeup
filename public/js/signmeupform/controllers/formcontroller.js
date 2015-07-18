@@ -2,6 +2,8 @@ var mod = angular.module('signmeupform', ['autocomplete', 'angular-momentjs', 's
 
 mod.controller("SignMeUpFormController", ["$http", "$moment", "$location", "BackendService", function($http, $moment, $location, BackendService) {
   var _that = this;
+  this.showAlert = false;
+  this.warnMessage = "";
   this.userData = {
     name: null,
     email: null,
@@ -30,8 +32,11 @@ mod.controller("SignMeUpFormController", ["$http", "$moment", "$location", "Back
   var submit = function(data) {
       var a = BackendService.sendSignupForm(_that.userData);
       a.then(function (data) {
+
         $location.path("/submitted");
       }, function (data) {
+        _that.warnMessage ="Error while submitting your form. :-(";
+        _that.showAlert = true;
       });
   }
   this.submit = submit;
