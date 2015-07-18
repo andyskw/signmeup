@@ -8,9 +8,7 @@ angular.module('signmeup.services.backend', [])
 
 
       $http({method: 'GET', url: '/occupations', timeout: 1000}).success(function(data,status) {
-        if (status === 200) {
           deferred.resolve(data.data);
-        }
       }).error(function(err,status) {
         deferred.reject(err);
       });
@@ -20,11 +18,10 @@ angular.module('signmeup.services.backend', [])
     function sendSignupForm(data) {
       var deferred = $q.defer();
       $http({method: 'POST', url: '/signup', data: data, timeout: 1000}).success(function (data, status) {
-        if (status === 200) {
-          deferred.resolve(data.data);
-        }
-      }).error(function(data, status) {
-        deferred.reject(data.data);
+          deferred.resolve();
+        
+      }).error(function(reason) {
+        deferred.reject(reason);
       });
       return deferred.promise;
     }
