@@ -65,6 +65,7 @@ describe("signup-request-validator", function () {
 
   });
 
+
   it("should return with an VALID result when occupation field is missing", function() {
     delete data.birthdate;
 
@@ -96,5 +97,14 @@ describe("signup-request-validator", function () {
     expect(result.issues).to.contain({field: "birthdate", issue:validator.issues.INVALID});
 
   });
+
+  it("should return with a VALID result when email domain does not contain TLD", function() {
+    data.email='andras@bandras'
+    var validator = new SignupRequestValidator();
+
+    var result = validator.validateRequest(data);
+    expect(result.isValid).to.be.true;
+  });
+
 
 });

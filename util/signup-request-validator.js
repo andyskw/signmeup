@@ -30,7 +30,7 @@ function validateRequest(data) {
   }
 
   //validate e-mail address:
-  if (data.email && !validator.isEmail(data.email)) {
+  if (data.email && !validator.isEmail(data.email, {require_tld: false})) {
     issues.push(new RequestIssue("email", CONST_ISSUE_TYPES.INVALID));
   }
 
