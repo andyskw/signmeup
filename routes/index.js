@@ -9,5 +9,5 @@ exports.initRoute = function(conf, l) {
 }
 
 function processGet(req,res) {
-  res.render('index', { title: 'Express' });
+  res.render('index', { title: 'Signmeup form' });
 }
