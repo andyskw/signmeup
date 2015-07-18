@@ -19,7 +19,7 @@ mod.controller("SignMeUpFormController", ["$http", "$moment", "$location", "Back
   });
 
   function onType(current) {
-    if (current.length < 3) {
+    if (!current || current.length < 3) {
       _self.occupations = [];
     } else {
       _self.occupations = _self.occupationData;
@@ -29,7 +29,6 @@ mod.controller("SignMeUpFormController", ["$http", "$moment", "$location", "Back
 
   var submit = function(data) {
       var a = BackendService.sendSignupForm(_that.userData);
-      console.log(a);
       a.then(function (data) {
         $location.path("/submitted");
       }, function (data) {
