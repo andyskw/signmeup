@@ -25,3 +25,8 @@
   background: rgba(100, 0, 0, 0.1);
   color: #FA787E;
 }
+
+.autocomplete ul {
+  background-color: #ffffff;
+  padding: 1px;
+}
