@@ -42,10 +42,9 @@ the following command:
 
 #### Coverage report
 
-To generate a coverage report of the test cases, you can run istanbul with the following
-command:
+To generate a coverage report of the backend test cases, you can run istanbul:
 
-     ./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha -- --recursive ./test/backend
+     npm run test:backend:cover
 
 Then you can open the coverage report:
 
@@ -55,16 +54,16 @@ Then you can open the coverage report:
 ### Frontend testing
 
 Frontend test cases are build on karma - mocha - chai - sinon - ng-mocks, so that
-it is consistent with the backend, and it's easier to maintain.
+it is consistent with the backend tests, and it's easier to maintain.
 
 To start the test runner, you can say:
 
-    ./node_modules/.bin/karma start
+    npm run test:frontend
 
 
 #### Frontend coverage report
 
-Istanbul is also wired in for the frontend, so you can check the coverage report
+Istanbul is also wired in for the frontend tests, so you can check the coverage report
 for angular as well.
 
     open ./coverage/karma/report-html/index.html

@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "start": "index.js",
-    "test": "./node_modules/.bin/mocha --recursive ./test/backend"
+    "test": "./node_modules/.bin/mocha --recursive ./test/backend",
+    "test:backend:cover": "./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha -- --recursive ./test/backend",
+    "test:frontend" : "./node_modules/.bin/karma start --single-run"
   },
   "repository": {
     "type": "git",
